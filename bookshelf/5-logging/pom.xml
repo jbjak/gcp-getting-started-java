@@ -32,24 +32,26 @@ Copyright 2016 Google Inc.
 
   <properties>
     <!-- [START config] -->
-    <projectID>myProjectID</projectID> <!-- set w/ -DprojectID=myProjectID on command line -->
+    <projectID>bookshelf-202515</projectID> <!-- set w/ -DprojectID=myProjectID on command line -->
 
     <bookshelf.storageType>datastore</bookshelf.storageType>   <!-- datastore or cloudsql -->
 
     <sql.dbName>bookshelf</sql.dbName>                        <!-- A reasonable default -->
 <!-- Instance Connection Name - project:region:dbName -->
 <!-- -Dsql.instanceName=localhost to use a local MySQL server -->
-    <sql.instanceName>${projectID}:us-central1:${sql.dbName}</sql.instanceName>
+<!--    <sql.instanceName>bookshelf-202515:us-central1:library</sql.instanceName>  -->
+    <sql.instanceName>localhost</sql.instanceName>
     <sql.userName>root</sql.userName>                         <!-- A reasonable default -->
-    <sql.password>myRootPassword1234</sql.password> <!-- -Dsql.password=myRootPassword1234 -->
+    <sql.password>passw0rd</sql.password> <!-- -Dsql.password=myRootPassword1234 -->
 
     <bookshelf.bucket>${projectID}</bookshelf.bucket> <!-- bucket w/o gs:// -->
 
-    <callback.host></callback.host> <!-- Typically projectname.appspot.com -->
-    <bookshelf.clientID></bookshelf.clientID>             <!-- for User Authentication -->
-    <bookshelf.clientSecret></bookshelf.clientSecret> <!-- from g.co/cloud/console -->
-    <!-- Register in g.co/cloud/console -->
+<!-- [START auth] ### COMMENT OUT AUTH FOR LOCALHOST EXECUTION ### -->
+    <callback.host>${projectID}.appspot.com</callback.host>
+    <bookshelf.clientID>782353963900-85dpav6cv19uj90gqjqf4f0qhboq5jb5.apps.googleusercontent.com</bookshelf.clientID>
+    <bookshelf.clientSecret>UKqa5xCwMhKi41jB9ellw42r</bookshelf.clientSecret>
     <bookshelf.callback>https://${callback.host}/oauth2callback</bookshelf.callback>
+<!-- [END auth] -->
     <!-- [END config] -->
 
     <appengine.maven.plugin>1.3.2</appengine.maven.plugin>

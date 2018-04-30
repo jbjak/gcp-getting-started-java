@@ -32,17 +32,16 @@ Copyright 2016 Google Inc.
 
   <properties>
     <!-- [START config] -->
-    <projectID>bookshelf-202515</projectID> <!-- set w/ -DprojectID=myProjectID on command line -->
+    <projectID>myProjectID</projectID> <!-- set w/ -DprojectID=myProjectID on command line -->
 
     <bookshelf.storageType>datastore</bookshelf.storageType>   <!-- datastore or cloudsql -->
 
     <sql.dbName>bookshelf</sql.dbName>                        <!-- A reasonable default -->
 <!-- Instance Connection Name - project:region:dbName -->
 <!-- -Dsql.instanceName=localhost to use a local MySQL server -->
-<!--    <sql.instanceName>bookshelf-202515:us-central1:library</sql.instanceName>  -->
-    <sql.instanceName>localhost</sql.instanceName>
+    <sql.instanceName>${projectID}:us-central1:${sql.dbName}</sql.instanceName>
     <sql.userName>root</sql.userName>                         <!-- A reasonable default -->
-    <sql.password>passw0rd</sql.password> <!-- -Dsql.password=myRootPassword1234 -->
+    <sql.password>myRootPassword1234</sql.password> <!-- -Dsql.password=myRootPassword1234 -->
 
     <bookshelf.bucket>${projectID}</bookshelf.bucket> <!-- bucket w/o gs:// -->
 

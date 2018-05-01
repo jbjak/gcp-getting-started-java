@@ -46,7 +46,6 @@ Copyright 2016 Google Inc.
 
     <bookshelf.bucket>${projectID}</bookshelf.bucket> <!-- bucket w/o gs:// -->
 
-<<<<<<< HEAD
 <!-- [START auth] -->
     <callback.host>${projectID}.appspot.com</callback.host>
     <bookshelf.clientID>782353963900-85dpav6cv19uj90gqjqf4f0qhboq5jb5.apps.googleusercontent.com</bookshelf.clientID>

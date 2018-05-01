@@ -25,10 +25,13 @@ handlers:
 # [START env_variables]
 env_variables:    # Logging options
   JAVA_OPTS: >-
-    -D.level=INFO
+    -D.level=FINE
 # [END env_variables]
 # [END runtime]
 
 runtime_config:   # Optional
   jdk: openjdk8
   server: jetty9
+
+manual_scaling:
+  instances: 1

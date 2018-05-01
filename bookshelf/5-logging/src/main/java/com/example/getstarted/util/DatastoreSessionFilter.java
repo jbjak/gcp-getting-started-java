@@ -119,7 +119,7 @@ public class DatastoreSessionFilter implements Filter {
     Enumeration<String> attrNames = session.getAttributeNames();
     while (attrNames.hasMoreElements()) {
       String attrName = attrNames.nextElement();
-      logger.log(Level.INFO, "Load session attribute name: " + attrName + " value: " + (String) session.getAttribute(attrName));
+      logger.log(Level.FINE, "Load session attribute name: " + attrName + " value: " + (String) session.getAttribute(attrName));
       sessionMap.put(attrName, (String) session.getAttribute(attrName));
     }
 

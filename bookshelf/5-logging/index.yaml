@@ -14,8 +14,7 @@
 
 # [START indexes]
 indexes:
-
-- kind: Book
+- kind: Book5
   ancestor: false         # Datastore allows a Parent -> Child relationship, this isn't one of those
   properties:
   - name: createdById     # User who created the Entity

@@ -39,6 +39,8 @@ import java.security.SecureRandom;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -69,6 +71,8 @@ public class DatastoreSessionFilter implements Filter {
   private static Datastore datastore;
   private static KeyFactory keyFactory;
   private static final DateTimeFormatter dtf = DateTimeFormat.forPattern("yyyyMMddHHmmssSSS");
+
+  private static final Logger logger = Logger.getLogger(DatastoreSessionFilter.class.getName());
 
   @Override
   public void init(FilterConfig config) throws ServletException {
@@ -115,6 +119,7 @@ public class DatastoreSessionFilter implements Filter {
     Enumeration<String> attrNames = session.getAttributeNames();
     while (attrNames.hasMoreElements()) {
       String attrName = attrNames.nextElement();
+      logger.log(Level.INFO, "Load session attribute name: " + attrName + " value: " + (String) session.getAttribute(attrName));
       sessionMap.put(attrName, (String) session.getAttribute(attrName));
     }
 
